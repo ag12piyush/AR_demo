@@ -1,0 +1,50 @@
+<!doctype HTML>
+<html>
+<script src="C:/Users/innovation/Desktop/T16AR/Aframe/aframe.min.js"></script>
+<script src="C:/Users/innovation/Desktop/T16AR/Aframe/aframe-ar.js"></script>
+  <body style='margin : 0px; overflow: hidden;'>
+   <a-scene embedded arjs='sourceType: webcam; detectionMode: mono; trackingMethod: best; debugUIEnabled: false;' vr-mode-ui="enabled: false">
+ 
+
+
+<a-assets>
+           <video id="PGS_AR" autoplay loop="true" muted="true" src="C:/Users/innovation/Desktop/T16AR/video/IMG_5009.MOV"></video>
+	   <audio id="C:/Users/innovation/Desktop/Cafe video clips/IMG_5009.MOV" preload="auto"></audio>
+</a-assets>
+    
+      <a-marker preset="hiro">
+	  <a-video src="#PGS_AR" width="2" height="2" position="0 0 0" rotation="270 0 0" play="true"></a-video>
+	  <a-audio src="#sound" position='0 0.5 0' material='color: black;' soundhandler play="true"> </a-audio>
+      </a-marker>
+  	  
+    <a-entity sound="src: #sound" autoplay="false"></a-entity>
+  	<a-entity camera></a-entity>
+    </a-scene>
+    <script>
+      window.addEventListener('click', function () {
+      var v = document.querySelector('#PGS_AR');
+      var a = document.querySelector('#sound');
+      v.play();
+      a.play();
+      });
+    </script>
+  </body>
+</html> 
+
+<!--
+
+
+
+<!DOCTYPE html>
+<html>
+<script src="C:/Users/innovation/Desktop/AR_js/A-frame/AR.js-master/AR.js-master/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
+<script src="C:/Users/innovation/Desktop/AR_js/A-frame/AR.js-master/AR.js-master/aframe/build/aframe-ar.js"></script>
+<a-scene embedded arjs= 'trackingMethod: best;'>
+<a-anchor hit-testing-enabled='true'>
+ <a-plane src="https://www.youtube.com/watch?v=ZYZYnY-uu10" width="2" height="2" rotation="-55 0 0" position="0 0 0" colour="yellow">
+ </a-plane>
+</a-anchor>
+ <a-camera-static/>
+</a-scene>
+</html>
+-->
