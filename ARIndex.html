@@ -13,13 +13,15 @@
 </a-assets>
     
       <a-marker preset="hiro">
-	  <a-video src="#PGS_AR" width="2" height="2" position="0 0 0" rotation="270 0 0" play="true"></a-video>
-	  <a-audio src="#sound" position='0 0.5 0' material='color: black;' soundhandler play="true"> </a-audio>
+	  <a-video src="#PGS_AR" width="1" height="1" position="0 0 0" rotation="270 0 0" play="true"></a-video>
+	  <a-audio src="#sound" position='0 0.5 0' material='color: black;' soundhandler play="true"> </a-audio> -->
+	  <iframe width="2" height="2" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
       </a-marker>
   	  
     <a-entity sound="src: #sound" autoplay="false"></a-entity>
   	<a-entity camera></a-entity>
-    </a-scene>
+    </a-scene artoolkit='sourceType: webcam;'>
     <script>
       window.addEventListener('click', function () {
       var v = document.querySelector('#PGS_AR');
