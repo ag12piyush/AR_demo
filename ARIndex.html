@@ -19,12 +19,12 @@
 			
 			    marker.addEventListener('markerLost', function() {
                
-                    var vv = document.querySelector('#video');
-                    var aa = document.querySelector('#sound');
-                    vv.pause();
-                    aa.pause();
-					vv.load();
-					aa.load();
+                    var v = document.querySelector('#video');
+                    var a = document.querySelector('#sound');
+                    v.pause();
+                    a.pause();
+					v.currentTime = 0;
+					a.load();
               
             });
 			
