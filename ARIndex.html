@@ -3,7 +3,7 @@
 <script src="Aframe/aframe.min.js"></script>
 <script src="Aframe/aframe-ar.js"></script>
 <script>
-    AFRAME.registerComponent('registerevents', {
+   AFRAME.registerComponent('registerevents', {
         init: function() {
             var marker = this.el;
 			
@@ -24,7 +24,7 @@
                     v.pause();
                     a.pause();
 					v.currentTime = 0;
-					a.load();
+					a.currentTime = 0;
               
             });
 			
