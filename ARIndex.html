@@ -2,14 +2,43 @@
 <html>
 <script src="Aframe/aframe.min.js"></script>
 <script src="Aframe/aframe-ar.js"></script>
+<script>
+    AFRAME.registerComponent('registerevents', {
+        init: function() {
+            var marker = this.el;
+			
+            marker.addEventListener('markerFound', function() {
+                var markerId = marker.id;
+                if (markerId == 'marker-hiro') {
+                    var v = document.querySelector('#video');
+                    var a = document.querySelector('#sound');
+                    v.play();
+                    a.play();
+                }
+            });
+			
+			    marker.addEventListener('markerLost', function() {
+               
+                    var vv = document.querySelector('#video');
+                    var aa = document.querySelector('#sound');
+                    vv.pause();
+                    aa.pause();
+					vv.load();
+					aa.load();
+              
+            });
+			
+        }
+    });
+</script>
   <body style='margin : 0px; overflow: hidden;'>
    <a-scene embedded arjs='sourceType: webcam; detectionMode: mono; trackingMethod: best; debugUIEnabled: false;' vr-mode-ui="enabled: false">
  
 
 
 <a-assets>
-           <video id="PGS_AR" autoplay loop="true" muted="true" src="video/IMG_5009.MOV"></video>
-	   <audio id="video/IMG_5009.MOV" preload="auto"></audio>
+           <video id="PGS_AR" autoplay loop="true" muted="true" src="video/Super Hub 5.mp4"></video>
+	   <audio id="sound" preload="auto" src="video/Super Hub 5.mp4"></audio>
 </a-assets>
     
       <a-marker preset="hiro">
@@ -20,17 +49,9 @@
     <a-entity sound="src: #sound" autoplay="false"></a-entity>
   	<a-entity camera></a-entity>
     </a-scene artoolkit='sourceType: webcam;'>
-    <script>
-      window.addEventListener('click', function () {
-      var v = document.querySelector('#PGS_AR');
-      var a = document.querySelector('#sound');
-      v.play();
-      a.play();
-      });
-    </script>
+   
   </body>
-</html> 
-
+</html>
 <!--
 
 
